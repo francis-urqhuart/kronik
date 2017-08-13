@@ -1,10 +1,10 @@
 package de.meyer.kronik.repositories;
 
 import de.meyer.kronik.entities.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface UserRepository {
+public interface UserRepository extends JpaRepository<User, Long> {
 
-    List<User> findUsers(long max, int count);
 }

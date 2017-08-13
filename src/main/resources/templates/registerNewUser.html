@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${#messages.msg('viewApplicationName') + ' :: ' + #messages.msg('viewTitleRegisterNewUser') }"></title>
+    <link rel="stylesheet" th:href="@{/style.css}"></link>
+</head>
+<body>
+<h1 th:text="${#messages.msg('viewTitleRegisterNewUser')}"></h1>
+<form method="POST">
+
+<label class="bold" for="givenName" th:text="${#messages.msg('User.givenName')}"></label>
+<input id="givenName" type="text" name="givenName" size="40" />
+<label class="bold" for="familyName" th:text="${#messages.msg('User.familyName')}"></label>
+<input id="familyName" name="familyName" size="40" />
+<label class="bold" for="pseudonym" th:text="${#messages.msg('User.pseudonym')}"></label>
+<input id="pseudonym" name="pseudonym" size="12" />
+<label class="bold" for="dateOfBirth" th:text="${#messages.msg('User.dateOfBirth')}"></label>
+<input id="dateOfBirth" name="dateOfBirth" size="12" />
+<input class="bold" type="submit" value="registerNewUser" />
+
+</form>
+
+</body>
+</html>

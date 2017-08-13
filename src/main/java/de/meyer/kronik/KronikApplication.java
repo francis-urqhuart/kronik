@@ -1,6 +1,5 @@
 package de.meyer.kronik;
 
-import org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -31,5 +30,6 @@ public class KronikApplication {
     public JdbcTemplate jdbcTemplate (DataSource dataSource) {
 	    return new JdbcTemplate(dataSource);
     }
+
 
 }
