@@ -51,6 +51,77 @@ public class Entry {
     @JoinColumn(name = "OWNER_ID")
     private User entryOwner;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Entry)) return false;
+
+        Entry entry = (Entry) o;
+
+        if (mgDlBloodSugar != entry.mgDlBloodSugar) return false;
+        if (beforeActivity != entry.beforeActivity) return false;
+        if (beforeMeal != entry.beforeMeal) return false;
+        if (carboHydrates != entry.carboHydrates) return false;
+        if (!id.equals(entry.id)) return false;
+        if (!createdDate.equals(entry.createdDate)) return false;
+        if (!lastModifiedDate.equals(entry.lastModifiedDate)) return false;
+        if (!fromDate.equals(entry.fromDate)) return false;
+        if (tillDate != null ? !tillDate.equals(entry.tillDate) : entry.tillDate != null) return false;
+        if (weight != null ? !weight.equals(entry.weight) : entry.weight != null) return false;
+        if (!mmolBloodSugar.equals(entry.mmolBloodSugar)) return false;
+        if (bolusInsulin != null ? !bolusInsulin.equals(entry.bolusInsulin) : entry.bolusInsulin != null) return false;
+        if (basalInsulin != null ? !basalInsulin.equals(entry.basalInsulin) : entry.basalInsulin != null) return false;
+        if (descActivity != null ? !descActivity.equals(entry.descActivity) : entry.descActivity != null) return false;
+        if (descMeal != null ? !descMeal.equals(entry.descMeal) : entry.descMeal != null) return false;
+        if (remark != null ? !remark.equals(entry.remark) : entry.remark != null) return false;
+        return entryOwner.equals(entry.entryOwner);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id.hashCode();
+        result = 31 * result + createdDate.hashCode();
+        result = 31 * result + lastModifiedDate.hashCode();
+        result = 31 * result + fromDate.hashCode();
+        result = 31 * result + (tillDate != null ? tillDate.hashCode() : 0);
+        result = 31 * result + (weight != null ? weight.hashCode() : 0);
+        result = 31 * result + mgDlBloodSugar;
+        result = 31 * result + mmolBloodSugar.hashCode();
+        result = 31 * result + (bolusInsulin != null ? bolusInsulin.hashCode() : 0);
+        result = 31 * result + (basalInsulin != null ? basalInsulin.hashCode() : 0);
+        result = 31 * result + (beforeActivity ? 1 : 0);
+        result = 31 * result + (beforeMeal ? 1 : 0);
+        result = 31 * result + (descActivity != null ? descActivity.hashCode() : 0);
+        result = 31 * result + (descMeal != null ? descMeal.hashCode() : 0);
+        result = 31 * result + carboHydrates;
+        result = 31 * result + (remark != null ? remark.hashCode() : 0);
+        result = 31 * result + entryOwner.hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Entry{" +
+                "id=" + id +
+                ", createdDate=" + createdDate +
+                ", lastModifiedDate=" + lastModifiedDate +
+                ", fromDate=" + fromDate +
+                ", tillDate=" + tillDate +
+                ", weight=" + weight +
+                ", mgDlBloodSugar=" + mgDlBloodSugar +
+                ", mmolBloodSugar=" + mmolBloodSugar +
+                ", bolusInsulin=" + bolusInsulin +
+                ", basalInsulin=" + basalInsulin +
+                ", beforeActivity=" + beforeActivity +
+                ", beforeMeal=" + beforeMeal +
+                ", descActivity='" + descActivity + '\'' +
+                ", descMeal='" + descMeal + '\'' +
+                ", carboHydrates=" + carboHydrates +
+                ", remark='" + remark + '\'' +
+                ", entryOwner=" + entryOwner +
+                '}';
+    }
+
     public Long getId() {
         return id;
     }
