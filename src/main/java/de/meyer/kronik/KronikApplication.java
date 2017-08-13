@@ -19,7 +19,7 @@ public class KronikApplication {
 	@Bean
 	public DataSource datasource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
-        ds.setDriverClassName("com.mysql.Driver");
+        ds.setDriverClassName("com.mysql.jdbc.Driver");
         ds.setUrl("jdbc:mysql://localhost:3306/kronik");
         ds.setUsername("kronik");
         ds.setPassword("kronik");
