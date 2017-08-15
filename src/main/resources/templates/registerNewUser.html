@@ -9,14 +9,15 @@
 <form method="POST">
 
 <label class="bold" for="givenName" th:text="${#messages.msg('User.givenName')}"></label>
-<input id="givenName" type="text" name="givenName" size="40" />
+<input id="givenName" type="text" name="givenName" size="40" /><br>
 <label class="bold" for="familyName" th:text="${#messages.msg('User.familyName')}"></label>
-<input id="familyName" name="familyName" size="40" />
+<input id="familyName" name="familyName" size="40" /><br>
 <label class="bold" for="pseudonym" th:text="${#messages.msg('User.pseudonym')}"></label>
-<input id="pseudonym" name="pseudonym" size="12" />
+<input id="pseudonym" name="pseudonym" size="12" /><br>
 <label class="bold" for="dateOfBirth" th:text="${#messages.msg('User.dateOfBirth')}"></label>
-<input id="dateOfBirth" name="dateOfBirth" size="12" />
-<input class="bold" type="submit" value="registerNewUser" />
+<input id="dateOfBirth" name="dateOfBirth" size="12" /><br>
+
+<input class="bold" type="submit" />
 
 </form>
 
