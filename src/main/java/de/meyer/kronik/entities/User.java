@@ -1,7 +1,11 @@
 package de.meyer.kronik.entities;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 public class User {
@@ -24,6 +28,7 @@ public class User {
     private String password;
 
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern="dd-MM-yyyy")
     private Calendar dayOfBirth;
 
     @Temporal(TemporalType.TIMESTAMP)
