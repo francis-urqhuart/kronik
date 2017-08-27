@@ -6,7 +6,9 @@
 </head>
 <body>
 
-<p>Willkommen!</p>
+<h1 th:text="${#messages.msg('viewHomeWelcome')}" />
+
+<a th:href="@{/}" ><label th:text="${#messages.msg('menuTitleHome')}"/></a> | <a th:href="@{/user/registerNewUser}" ><label th:text="${#messages.msg('menuTitleregisterNewUser')}"/></a>
 
 </body>
 </html>
