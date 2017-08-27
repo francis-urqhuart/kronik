@@ -42,4 +42,14 @@ public class UserController {
         return "redirect:/";
 
     }
+
+    public User userLoginCorrect(String pseudonym, String password) {
+     User local;
+     local = userRepository.findByPseudonym(pseudonym);
+
+     if (local != null && local.getPassword().equals(password)) {
+         return local;
+     }
+
+    }
 }
