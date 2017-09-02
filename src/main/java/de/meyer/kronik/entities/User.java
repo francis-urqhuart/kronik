@@ -29,13 +29,13 @@ public class User {
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern="dd-MM-yyyy")
-    private Calendar dayOfBirth;
+    private Date dayOfBirth;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Calendar createdDate;
+    private Date createdDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Calendar lastModifiedDate;
+    private Date lastModifiedDate;
 
     @Override
     public boolean equals(Object o) {
@@ -121,27 +121,27 @@ public class User {
         this.password = password;
     }
 
-    public Calendar getDayOfBirth() {
+    public Date getDayOfBirth() {
         return dayOfBirth;
     }
 
-    public void setDayOfBirth(Calendar dayOfBirth) {
+    public void setDayOfBirth(Date dayOfBirth) {
         this.dayOfBirth = dayOfBirth;
     }
 
-    public Calendar getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Calendar createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Calendar getLastModifiedDate() {
+    public Date  getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    public void setLastModifiedDate(Calendar lastModifiedDate) {
+    public void setLastModifiedDate(Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
 }
