@@ -5,7 +5,23 @@
     <link rel="stylesheet" th:href="@{/style.css}"></link>
 </head>
 <body>
+<h1 th:text="${#messages.msg('viewTitleUserProfile')}" />
 
+<form th:action="@{/updateUserProfile}" method="post">
+
+    <label class="bold" for="givenName" th:text="${#messages.msg('User.givenName')}"></label>
+    <input id="givenName" type="text" name="givenName" size="40" th:value="${user.givenName}"/><br/>
+    <label class="bold" for="familyName" th:text="${#messages.msg('User.familyName')}"></label>
+    <input id="familyName" name="familyName" th:value="${user.familyName}" size="40" /><br/>
+    <label class="bold" for="pseudonym" th:text="${#messages.msg('User.pseudonym')}"></label>
+    <input id="pseudonym" name="pseudonym" size="12" th:value="${user.pseudonym}" /><br/>
+    <label class="bold" for="dayOfBirth" th:text="${#messages.msg('User.dayOfBirth')}"></label>
+    <input id="dayOfBirth" type="date" name="dayOfBirth" size="12" th:value="${user.dayOfBirth}"/><br/>
+
+    <input class="bold" type="submit" />
+
+
+</form>
 
 </body>
 </html>

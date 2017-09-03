@@ -6,8 +6,11 @@ import de.meyer.kronik.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.Calendar;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -37,21 +40,29 @@ public class UserController {
 
     @RequestMapping(value = "/registerNewUser", method = POST)
     public String registerNewUser(User user) {
+
+        user.setCreatedDate(Calendar.getInstance().getTime());
+        user.setLastModifiedDate(Calendar.getInstance().getTime());
+
         userRepository.save(user);
 
-        return "redirect:/";
+        return "redirect:/user/" + user.getId();
 
     }
 
-    public User userLoginCorrect(String pseudonym, String password) {
-     User local;
-     local = userRepository.findByPseudonym(pseudonym);
+    @RequestMapping(value ="/{id}", method = GET)
+    public String showUserProfile(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("user", userRepository.findOne(id));
 
-     if (local != null && local.getPassword().equals(password)) {
-         return local;
-     }
+        return "redirect:/user/userProfile";
+    }
 
-     return local;
 
+    @RequestMapping(value="/user/updateUserProfile", method = POST)
+    public String updateUserProfile(User user) {
+        user.setLastModifiedDate(Calendar.getInstance().getTime());
+        userRepository.save(user);
+
+        return "redirect:/user/" + user.getId();
     }
 }
