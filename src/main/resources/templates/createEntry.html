@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${#messages.msg('viewApplicationName') + ' :: ' + #messages.msg('viewTitlecreateEntryView') }"></title>
+    <link rel="stylesheet" th:href="@{/style.css}"></link>
+</head>
+<body>
+<div th:include="header"></div>
+
+<h1 th:text="${#messages.msg('viewTitlecreateEntryView')}"></h1>
+<form method="POST">
+
+    <label class="bold" for="createdDate" th:text="${#messages.msg('Entry.createdDate')}"></label>
+    <input id="createdDate" type="date" name="createdDate" size="12" /><br/>
+    <label class="bold" for="lastModifiedDate" th:text="${#messages.msg('Entry.lastModifiedDate')}"></label>
+    <input id="lastModifiedDate" type="date" name="lastModifiedDate" size="12" /><br/>
+    <label class="bold" for="fromDate" th:text="${#messages.msg('Entry.fromDate')}"></label>
+    <input id="fromDate" type="date" name="fromDate" size="12" /><br/>
+    <label class="bold" for="tillDate" th:text="${#messages.msg('Entry.tillDate')}"></label>
+    <input id="tillDate" type="date" name="tillDate" size="12"/><br/>
+    <label class="bold" for="weight" th:text="${#messages.msg('Entry.weight')}"></label>
+    <input id="weight" type="text" name="weight" size="5" /><br/>
+    <label class="bold" for="mgDlBloodSugar" th:text="${#messages.msg('Entry.mgDlBloodSugar')}"></label>
+    <input id="mgDlBloodSugar" name="mgDlBloodSugar" size="5" /><br/>
+    <label class="bold" for="mmolBloodSugar" th:text="${#messages.msg('Entry.mmolBloodSugar')}"></label>
+    <input id="mmolBloodSugar" name="mmolBloodSugar" size="5" /><br/>
+    <label class="bold" for="bolusInsulin" th:text="${#messages.msg('Entry.bolusInsulin')}"></label>
+    <input id="bolusInsulin" name="bolusInsulin" size="5"/><br/>
+    <label class="bold" for="basalInsulin" th:text="${#messages.msg('Entry.basalInsulin')}"></label>
+    <input id="basalInsulin" name="basalInsulin" size="5" /><br/>
+    <label class="bold" for="beforeActivity" th:text="${#messages.msg('Entry.beforeActivity')}"></label>
+    <input id="beforeActivity" name="beforeActivity" size="5" /><br/>
+    <label class="bold" for="beforeMeal" th:text="${#messages.msg('Entry.beforeMeal')}"></label>
+    <input id="beforeMeal" name="beforeMeal" size="5" /><br/>
+    <label class="bold" for="carboHydrates" th:text="${#messages.msg('Entry.carboHydrates')}"></label>
+    <input id="carboHydrates" name="carboHydrates" size="5"/><br/>
+    <label class="bold" for="entryOwner" th:text="${#messages.msg('Entry.entryOwner')}"></label>
+    <input id="entryOwner" name="entryOwner" size="10"/><br/>
+
+    <input class="bold" type="submit" />
+</form>
+
+
+<div th:inlcude="footer"></div>
+
+</body>
+</html>
