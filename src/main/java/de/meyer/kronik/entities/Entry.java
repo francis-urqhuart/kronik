@@ -2,6 +2,7 @@ package de.meyer.kronik.entities;
 
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 public class Entry {
@@ -11,16 +12,16 @@ public class Entry {
     private Long id;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Calendar createdDate;
+    private Date createdDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Calendar lastModifiedDate;
+    private Date lastModifiedDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Calendar fromDate;
+    private Date fromDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Calendar tillDate;
+    private Date tillDate;
 
     private Long weight;
 
@@ -130,35 +131,35 @@ public class Entry {
         this.id = id;
     }
 
-    public Calendar getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Calendar createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Calendar getLastModifiedDate() {
+    public Date getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    public void setLastModifiedDate(Calendar lastModifiedDate) {
+    public void setLastModifiedDate(Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
 
-    public Calendar getFromDate() {
+    public Date getFromDate() {
         return fromDate;
     }
 
-    public void setFromDate(Calendar fromDate) {
+    public void setFromDate(Date fromDate) {
         this.fromDate = fromDate;
     }
 
-    public Calendar getTillDate() {
+    public Date getTillDate() {
         return tillDate;
     }
 
-    public void setTillDate(Calendar tillDate) {
+    public void setTillDate(Date tillDate) {
         this.tillDate = tillDate;
     }
 
