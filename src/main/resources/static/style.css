@@ -15,5 +15,9 @@ body {
 .entries {
     font-size: 10pt;
     font-weight: normal;
+}
 
+.entrydescription {
+    font-size: 10pt;
+    color: darkblue;
 }

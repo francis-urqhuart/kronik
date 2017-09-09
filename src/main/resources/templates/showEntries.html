@@ -12,16 +12,30 @@
 <div th:unless="${#lists.isEmpty(entries)}">
     <dl th:each="entry : ${entries}">
         <dt class="entries">
-            <span th:text="${entry.}"></span>
-            <span th:text="${entry.}"></span>
-            <span th:text="${entry.}"></span>
-            <span th:text="${entry.}"></span>
-            <span th:text="${entry.}"></span>
-            <span th:text="${entry.}"></span>
-            <span th:text="${entry.}"></span>
-            <span th:text="${entry.}"></span>
-            <span th:text="${entry.}"></span>
-            <span th:text="${entry.}"></span>
+            <span th:text="${entry.createdDate}"><p th:text="${#messages.msg('Entry.createdDate')}"></p></span>
+            <span th:text="${entry.lastModifiedDate}"><p th:text="${#messages.msg('Entry.lastModifiedDate')}"></p><</span>
+            <span th:text="${entry.fromDate}"><p th:text="${#messages.msg('Entry.fromDate')}"></p><</span>
+            <span th:text="${entry.tillDate}"><p th:text="${#messages.msg('Entry.tillDate')}"></p><</span>
+            <span th:text="${entry.weight}"><p th:text="${#messages.msg('Entry.weight')}"></p><</span>
+            <span th:text="${entry.mgDlBloodSugar}"><p th:text="${#messages.msg('Entry.mgDlBloodSugar')}"></p><</span>
+            <span th:text="${entry.mmolBloodSugar}"><p th:text="${#messages.msg('Entry.mmolBloodSugar')}"></p><</span>
+            <span th:text="${entry.bolusInsulin}"><p th:text="${#messages.msg('Entry.bolusInsulin')}"></p><</span>
+            <span th:text="${entry.basalInsulin}"><p th:text="${#messages.msg('Entry.basalInsulin')}"></p><</span>
+            <span th:text="${entry.beforeActivity}"><p th:text="${#messages.msg('Entry.beforeActivity')}"></p><</span>
+            <span th:text="${entry.beforeMeal}"><p th:text="${#messages.msg('Entry.beforeMeal')}"></p><</span>
+            <span th:text="${entry.carboHydrates}"><p th:text="${#messages.msg('Entry.carboHydrates')}"></p><</span>
+            <span th:text="${entry.entryOwner.id}"><p th:text="${#messages.msg('Entry.entryOwner.id')}"></p><</span>
+            <dd class="entrydescription">
+                <span th:if="${entry.descActivity}">
+                    <p th:text="${#messages.msg('Entry.descActivity')}"></p><
+                </span>
+                 <span th:if="${entry.descMeal}">
+                    <p th:text="${#messages.msg('Entry.descMeal')}"></p><
+                </span>
+                <span th:if="${entry.remark}">
+                    <p th:text="${#messages.msg('Entry.remark')}"></p><
+                </span>
+            </dd>
         </dt>
     </dl>
 </div>
