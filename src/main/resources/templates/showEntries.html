@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${#messages.msg('viewApplicationName') + ' :: ' + #messages.msg('viewTitleshowEntries') }"></title>
+    <link rel="stylesheet" th:href="@{/style.css}"></link>
+</head>
+<body>
+<div th:include="header"></div>
+
+<h1 th:text="${#messages.msg('viewTitleshowEntries')}"></h1>
+
+<div th:unless="${#lists.isEmpty(entries)}">
+    <dl th:each="entry : ${entries}">
+        <dt class="entries">
+            <span th:text="${entry.}"></span>
+            <span th:text="${entry.}"></span>
+            <span th:text="${entry.}"></span>
+            <span th:text="${entry.}"></span>
+            <span th:text="${entry.}"></span>
+            <span th:text="${entry.}"></span>
+            <span th:text="${entry.}"></span>
+            <span th:text="${entry.}"></span>
+            <span th:text="${entry.}"></span>
+            <span th:text="${entry.}"></span>
+        </dt>
+    </dl>
+</div>
+<div th:if="${#lists.isEmpty(entries)}">
+    <p th:text="${#messages.msg('notificationNoEntries')}"></p>
+</body>
+</html>

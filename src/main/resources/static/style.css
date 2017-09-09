@@ -7,3 +7,13 @@ body {
     font-size: 12pt;
     font-weight: bold;
 }
+
+.oops {
+    color: red;
+}
+
+.entries {
+    font-size: 10pt;
+    font-weight: normal;
+
+}
