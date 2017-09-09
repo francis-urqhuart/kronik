@@ -16,7 +16,6 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
-@RequestMapping("/user")
 public class UserController {
 
 
@@ -27,18 +26,18 @@ public class UserController {
         this.userRepository = ur;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String users(Model model) {
         model.addAttribute(userRepository.findAll());
         return "users";
     }
 
-    @RequestMapping(value = "/registerNewUser", method = GET)
+    @RequestMapping(value = "/user/registerNewUser", method = GET)
     public String showRegisterNewUser() {
         return "registerNewUser";
     }
 
-    @RequestMapping(value = "/registerNewUser", method = POST)
+    @RequestMapping(value = "/user/registerNewUser", method = POST)
     public String registerNewUser(User user) {
 
         user.setCreatedDate(Calendar.getInstance().getTime());
@@ -50,11 +49,11 @@ public class UserController {
 
     }
 
-    @RequestMapping(value ="/{id}", method = GET)
-    public String showUserProfile(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("user", userRepository.findOne(id));
+    @RequestMapping(value ="/user/{id}", method = GET)
+    public String showUserProfile(@PathVariable("id") String id, Model model) {
+        model.addAttribute("user", userRepository.findOne(Long.valueOf(id)));
 
-        return "redirect:/user/userProfile";
+        return "userProfile";
     }
 
 
