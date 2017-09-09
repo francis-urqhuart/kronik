@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<div th:insert="~{header :: navigation}"></div>
+<div th:include="header"></div>
 
 <h1 th:text="${#messages.msg('viewTitleRegisterNewUser')}"></h1>
 <form method="POST">
@@ -25,7 +25,7 @@
 </form>
 
 
-<div th:insert="~{footer :: copy}"></div>
+<div th:inlcude="footer"></div>
 
 </body>
 </html>
