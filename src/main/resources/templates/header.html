@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div th:fragment="navigation">
+    <a th:href="@{/}" ><label th:text="${#messages.msg('menuTitleHome')}"/></a> | <a th:href="@{/user/registerNewUser}" ><label th:text="${#messages.msg('menuTitleregisterNewUser')}"/></a>
+
+</div>
+
+</body>
+
+</html>

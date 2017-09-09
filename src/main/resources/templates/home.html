@@ -5,10 +5,13 @@
     <link rel="stylesheet" th:href="@{/style.css}"></link>
 </head>
 <body>
+<div th:insert="~{header :: navigation}"></div>
 
 <h1 th:text="${#messages.msg('viewHomeWelcome')}" />
 
-<a th:href="@{/}" ><label th:text="${#messages.msg('menuTitleHome')}"/></a> | <a th:href="@{/user/registerNewUser}" ><label th:text="${#messages.msg('menuTitleregisterNewUser')}"/></a>
+
+
+<div th:insert="~{footer :: copy}"></div>
 
 </body>
 </html>
