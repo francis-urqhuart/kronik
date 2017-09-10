@@ -4,8 +4,8 @@
 
 <body>
 
-<div th:fragment="copy">
-    &copy; 2017  Frank Meyer
+<div class="footer" th:fragment="copy">
+    <div th:text="${#messages.msg('viewCopyright')} + '  ' + ${#messages.msg('viewApplicationName')} + ' - ' + ${#messages.msg('viewAuthor')} "></div>
 </div>
 
 </body>

@@ -21,3 +21,8 @@ body {
     font-size: 10pt;
     color: darkblue;
 }
+
+.footer {
+    font-size: 8pt;
+    font-weight: normal;
+}

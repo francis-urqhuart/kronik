@@ -20,7 +20,7 @@ public class EntriesController {
     @RequestMapping("/entries")
     public String showEntries(Model model) {
 
-        model.addAllAttributes("entries", er.getAllEntries());
+      //  model.addAllAttributes("entries", er.findAll());
 
         return "showEntries";
 
