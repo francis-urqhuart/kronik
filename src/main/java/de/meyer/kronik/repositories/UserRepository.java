@@ -10,4 +10,6 @@ public interface UserRepository extends CrudRepository<User, Long> {
 
     User findByPseudonym(String pseudonym);
 
+    User findbyId(Long id);
+
 }

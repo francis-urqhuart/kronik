@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="${#messages.msg('viewApplicationName') + ' :: ' + #messages.msg('viewTitleUserProfile') }"></title>
+    <title th:text="${#messages.msg('ApplicationName') + ' :: ' + #messages.msg('viewTitleUserProfile') }"></title>
     <link rel="stylesheet" th:href="@{/style.css}"></link>
 </head>
 <body>
@@ -18,7 +18,8 @@
     <label class="bold" for="pseudonym" th:text="${#messages.msg('User.pseudonym')}"></label>
     <input id="pseudonym" name="pseudonym" size="12" th:value="${user.pseudonym}" /><br/>
     <label class="bold" for="dayOfBirth" th:text="${#messages.msg('User.dayOfBirth')}"></label>
-    <input id="dayOfBirth" type="date" name="dayOfBirth" size="12" th:value="${user.dayOfBirth}"/><br/>
+    <input id="dayOfBirth" type="date" name="dayOfBirth" size="12" th:value="${#dates.format(user.dayOfBirth, 'dd-MM-yyyy')}: ''"
+           placeholder="dd-mm-yyyy"  /><br/>
 
     <input class="bold" type="submit" />
 

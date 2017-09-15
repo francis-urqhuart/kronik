@@ -8,6 +8,20 @@ body {
     font-weight: bold;
 }
 
+a:link {
+    color: red;
+    text-decoration: none;
+}
+
+a:visited {
+     color: red;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
 .oops {
     color: red;
 }

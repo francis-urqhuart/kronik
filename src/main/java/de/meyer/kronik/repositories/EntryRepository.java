@@ -11,8 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Repository
-public interface EntryRepository extends JpaRepository<Entry, Long> {
 
+public interface EntryRepository extends JpaRepository<Entry, Long>  {
+
+    List<Entry> getAllEntries();
 
 }

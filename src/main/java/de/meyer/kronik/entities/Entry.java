@@ -27,7 +27,7 @@ public class Entry {
 
     private int mgDlBloodSugar;
 
-    private Long mmolBloodSugar;
+    private double mmolBloodSugar;
 
     private Long bolusInsulin;
 
@@ -179,11 +179,11 @@ public class Entry {
         this.mgDlBloodSugar = mgDlBloodSugar;
     }
 
-    public Long getMmolBloodSugar() {
+    public double getMmolBloodSugar() {
         return mmolBloodSugar;
     }
 
-    public void setMmolBloodSugar(Long mmolBloodSugar) {
+    public void setMmolBloodSugar(double mmolBloodSugar) {
         this.mmolBloodSugar = mmolBloodSugar;
     }
 
